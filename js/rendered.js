@@ -23,12 +23,11 @@ let size = 75;
 
 let geometryTexture = createGeometryTexture( new THREE.TorusKnotGeometry( .5, .5, 75, 75 ), size);;
 let geometryTextureSphere = createGeometryTexture(new THREE.SphereGeometry(1, size-1, size-1), size);
-let geometryTextureBox = createGeometryTexture(new THREE.BoxGeometry(1.5, 1.5, 1.5, 26, 26, 26), size);
 let geometryTextureTorus = createGeometryTexture( new THREE.TorusKnotGeometry( .5, .5, 75, 75 ), size);
 
 // Add textures to array for iteration
 let geometryTextures = [];
-geometryTextures.push( geometryTextureTorus, geometryTextureBox, geometryTextureSphere );
+geometryTextures.push( geometryTextureTorus, geometryTextureSphere );
 
 // Change geometryTexture.image on click
 let geometryTextureIndex = 0;
@@ -47,11 +46,7 @@ let particleOptions = {
   explodeRate: .5,
   targetTexture: geometryTexture,
   velocityFunctionString: 'outVelocity = direction * (dist/35.0);',
-  // colorFunctionString: 'color = vec4(0.455, .143, .99 - dist, 10);'
-  colorFunctionString: 'color = vec4(4.0, 1.3 - dist, .83 - dist, 3);'  
-  // colorFunctionString: 'color = vec4(.9, 1.3 - dist, .003 - dist, 2);'  
-  //colorFunctionString: 'color = vec4(9, .5, .04, 9);' 
-  // colorFunctionString: 'color = vec4(8, .5, .3, 2);'
+  colorFunctionString: 'color = vec4(6, .5, .02 - dist, 2);'
 };
 let particles = new Particles(renderer, scene, particleOptions);
 

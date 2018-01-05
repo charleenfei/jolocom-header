@@ -1,7 +1,7 @@
 	var raycaster = new THREE.Raycaster();
 
 	var $container = $('#canvasContainer');
-	var backgroundColor = 0x000000;
+	var backgroundColor = "#250A1D";
 
 	//set lazy animation
 	window.requestAnimationFrame = (function(){
